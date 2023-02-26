@@ -23,25 +23,14 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    </head>
    <body>
-      @include('sweetalert::alert')
       <div class="hero_area">
+        
          <!-- header section strats -->
         @include('home.header')
          <!-- end header section -->
-         <!-- slider section -->
-        @include('home.slider')
-         <!-- end slider section -->
-      </div>
-      <!-- why section -->
-     @include('home.why')
-      <!-- end why section -->
-      
-      <!-- arrival section -->
-      @include('home.arrival')
-      <!-- end arrival section -->
       
       <!-- product section -->
-      @include('home.product')
+      @include('home.product_view')
       <!-- end product section -->
 
       {{-- Comments and reply section starts here !! --}}
@@ -84,12 +73,7 @@
          <a href="javascript::void(0);" class="btn btn-danger" onclick="reply_close(this)">Close</a>
       </div>
       {{-- Comments and reply section ends here!!! --}}
-      <!-- subscribe section -->
-      @include('home.subscribe')
-      <!-- end subscribe section -->
-      <!-- client section -->
-     @include('home.client')
-      <!-- end client section -->
+     
       <!-- footer start -->
       @include('home.footer')
       <!-- footer end -->

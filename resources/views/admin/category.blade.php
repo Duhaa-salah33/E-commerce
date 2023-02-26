@@ -30,7 +30,16 @@
   padding: 12px 16px;
   transform: translate(0%, -50%);
 }
-
+.centre
+{
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  margin-top: 30px;
+  border: 3px solid gray;
+  table-layout: auto;
+  background-color:cornflowerblue;
+}
 .close:hover {background: #bbb;}
    </style>
   </head>
@@ -58,17 +67,13 @@
         <div class="main-panel">
             <div class="content-wrapper">
 
-                @if(session()->has('message'))
+              @if(session()->has('message'))
                 <div class="alert alert-success">
-
-                    {{session()->get('message')}}
-                    {{-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button> --}}
-
-                    <span class="close" type="button" aria-hidden="true" data-dismiss="alert" aria-hidden="true" aria-label="close">x</span>
-
+                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                 {{session()->get('message')}}
                 </div>
                 @endif
-
+                
                 <div class="div_center">
                    <h2 class="h2_font"> Add Category </h2> 
                    <form action="{{url('/add_category')}}" method="POST">
@@ -79,6 +84,24 @@
                     <input type="submit" class="btn btn-primary" name="submit" value="Add Category">
                    </form>
                 </div>
+                
+                <table class="centre">
+                  <tr>
+                    <td>All Categories</td>
+                    <td>Action</td>
+                  </tr>
+                  
+                  @foreach ($data as $d)
+                  <tr>
+                    <td>{{$d->category_name}}</td>
+                    <td>
+                      <a onclick="return confirm('Are you sure you want to delete!')" href="{{url('delete_category',$d->id)}}" class="btn btn-danger">Delete</a>
+                      
+                    </td>
+                  </tr>
+                  @endforeach
+                </table>
+
             </div>
         </div>
       <!-- page-body-wrapper ends -->
@@ -87,4 +110,11 @@
     <!-- plugins:js -->
     @include('admin.script')
   </body>
+  <script src="js/jquery-3.4.1.min.js"></script>
+<!-- popper js -->
+<script src="js/popper.min.js"></script>
+<!-- bootstrap js -->
+<script src="js/bootstrap.js"></script>
+<!-- custom js -->
+<script src="js/custom.js"></script>
 </html>

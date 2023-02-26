@@ -1,33 +1,22 @@
 <section class="product_section layout_padding">
     <div class="container">
        <div class="heading_container heading_center">
-          <h2>
-             Our <span>products</span>
-          </h2>
+        
 <br><br>
 
           <div>
-            <form action="{{url('search_product')}}" method="GET">
+            <form action="{{url('product_search')}}" method="GET">
                @csrf
                <input type="text" style="width: 500px;" name="search" placeholder="Search for something">
                <input type="submit" value="Search" class="btn btn-primary">
             </form>
-           
+          
           </div>
           
 
        </div>
 
-       @if(session()->has('message'))
-                <div class="alert alert-success">
-
-                    {{session()->get('message')}}
-                    {{-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button> --}}
-
-                    <span type="button" data-dismiss="alert" aria-hidden="true" aria-label="close">x</span>
-
-                </div>
-                @endif
+    
        <div class="row">
 
          @foreach ($product as $pro)

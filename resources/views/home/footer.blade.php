@@ -10,6 +10,23 @@
                    <p><strong>ADDRESS:</strong> 28 White tower, Street Name New York City, USA</p>
                    <p><strong>TELEPHONE:</strong> +91 987 654 3210</p>
                    <p><strong>EMAIL:</strong> yourmain@gmail.com</p>
+                   <p>
+                     {{-- @if (Route::has('login'))
+               @auth
+               <li class="nav-item">
+               <x-app-layout>
+               </x-app-layout>
+               </li>
+               @else
+                <li class="nav-item">
+                  <a class="btn btn-primary" id="logincss" href="{{route('login')}}">Login</a>
+               </li>
+               <li class="nav-item">
+                  <a class="btn btn-success" href="{{route('register')}}">Register</a>
+               </li>
+               @endauth
+               @endif --}}
+                   </p>
                  </div>
               </div>
           </div>
